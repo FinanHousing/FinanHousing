@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Johan Julian",
+      "lastname": "Huanca Nina",
+      "username": "ワンカ",
+      "email": "j.huanca4141@gmail.com",
+      "password": "@rduino4141!",
+      "phone": 995240514
+    },
+    {
+      "firstname": "Jhon smith",
+      "lastname": "Peralta Ayala",
+      "username": "AlgelGamer",
+      "email": "jhonsmith2014@gmail.com",
+      "phone": "666666666",
+      "password": "ragnack1234",
+      "id": 2
+    }
+  ]
+}

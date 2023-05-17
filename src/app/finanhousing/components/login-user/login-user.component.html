@@ -1,0 +1,13 @@
+<div class="login-container">
+  <h2>Login in Finan-Housing</h2>
+  <form class="login-form" (submit)="onSubmit()" #loginForm="ngForm">
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Email" name="email" required [(ngModel)]="userData.email">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Password" name="password" required [(ngModel)]="userData.password" type="password">
+    </mat-form-field>
+    <button type="submit" class="login-button">Login</button>
+    <button class="cancel-button" (click)="navigateToHome()">Cancel</button>
+  </form>
+</div>
