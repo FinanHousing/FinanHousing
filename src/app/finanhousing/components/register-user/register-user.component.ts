@@ -14,7 +14,6 @@ export class RegisterUserComponent implements OnInit{
   userData: User;
   dataSource: MatTableDataSource<any>;
   password: string[];
-  //displayedColumns: string[] = ['id', 'name', 'email', 'password', 'phone'];
 
   @ViewChild('userForm', { static: true })
   userForm!: NgForm;

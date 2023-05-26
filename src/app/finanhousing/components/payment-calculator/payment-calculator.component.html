@@ -1,0 +1,23 @@
+<div class="register-container">
+  <h2>Register Data</h2>
+  <form class="register-form" (submit)="onSubmit()" #calculatorForm="ngForm">
+    <p>Monto del prestamo:</p>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Amount" name="amount" required [(ngModel)]="loanData.amount">
+    </mat-form-field>
+    <p>Tiempo en el que quiere trabajarlo ("Dias","Meses","Años"):</p>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Time Format" name="timeformat" required [(ngModel)]="loanData.timeformat">
+    </mat-form-field>
+    <p>Cantidad de tiempo en los plazos preestablecidos:</p>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Time" name="time" required [(ngModel)]="loanData.time">
+    </mat-form-field>
+    <p>Tasa de prestamo:</p>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Rate" name="rate" required [(ngModel)]="loanData.rate">
+    </mat-form-field>
+    <button type="submit" class="save-button">Save</button>
+    <button class="cancel-button" (click)="navigateToHome()">Cancel</button>
+    </form>
+</div>

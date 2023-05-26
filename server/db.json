@@ -18,5 +18,14 @@
       "password": "ragnack1234",
       "id": 2
     }
+  ],
+  "loans": [
+    {
+      "id": 1,
+      "amount": 5000,
+      "timeformat": "Anios",
+      "time": 12,
+      "rate": 0.09
+    }
   ]
 }
