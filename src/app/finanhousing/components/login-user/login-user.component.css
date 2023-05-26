@@ -1,57 +1,136 @@
-.login-container {
+.card-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background-color: #ffffff;
+  height: 100vh;
+  background-color: #14162E;
+
 }
 
-h2 {
-  margin-bottom: 2rem;
+.card {
+  display: flex;
+  background-color: #FFFFFF;
+  border-radius: 90px;
+  overflow: hidden;
+  width: 700px; /* Cambiar el valor según tus preferencias */
+  height: 500px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 50px;
+}
+.left-section {
+  flex: 1;
+  background-color: #357488;
+  padding: 40px;
+
 }
 
-.form-group {
+.left-section h2, .left-section p {
+  color: #FFFFFF;
+}
+
+.right-section {
+  flex: 1;
+  padding: 40px;
+
+}
+
+.right-section h2 {
+  color: #000000;
+
+}
+
+.right-section form {
+  color: #000000;
+
+
+}
+
+.right-section label {
+  color: #000000;
+  font-weight: bold;
+}
+
+.right-section input[type="email"],
+.right-section input[type="password"] {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  padding: 8px;
+  margin-bottom: 10px;
   width: 100%;
-  margin-bottom: 1.5rem;
+
 }
 
-.login-button,
-.cancel-button {
-  margin-top: 1.5rem;
-  padding: 0.5rem 1rem;
+.right-section button {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+.separator {
+  text-align: center;
+  margin: 10px 0;
+  color: #000000;
+
+}
+
+.google-button {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+h2{
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: #1E1E1E;
+
+}
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 16px;
+}
+
+.card h3 {
+  margin-top: 100px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 58px;
+  text-align: center;
+  color: #FFFFFF;
+  opacity: 0.64;
+
+}
+
+.card p {
+  text-align: center;
+  color: #FFFFFF;
+  opacity: 0.64;
+  font-style: normal;
+  font-weight: normal;
+
+}
+
+
+.register-button {
+  margin-top: 20px; /* Ajusta el margen superior según tus preferencias */
+  background-color: #46A2AE;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: bold;
   cursor: pointer;
-}
-
-.login-button {
-  background-color: #3f51b5;
-  color: #ffffff;
-  margin-right: 1rem;
-}
-
-.cancel-button {
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-  .login-container {
-    padding: 1.5rem;
-  }
-
-  .form-group {
-    font-size: 14px;
-  }
-
-  .login-button,
-  .cancel-button {
-    font-size: 14px;
-    padding: 0.25rem 0.75rem;
-  }
 }
