@@ -1,13 +1,28 @@
-<div class="login-container">
-  <h2>Login in Finan-Housing</h2>
-  <form class="login-form" (submit)="onSubmit()" #loginForm="ngForm">
-    <mat-form-field class="form-group">
-      <input matInput placeholder="Email" name="email" required [(ngModel)]="userData.email">
-    </mat-form-field>
-    <mat-form-field class="form-group">
-      <input matInput placeholder="Password" name="password" required [(ngModel)]="userData.password" type="password">
-    </mat-form-field>
-    <button type="submit" class="login-button">Login</button>
-    <button class="cancel-button" (click)="navigateToHome()">Cancel</button>
-  </form>
+<div class="card-container">
+  <div class="card">
+    <div class="left-section">
+      <h3>Create Account</h3>
+      <p>Register to UJOBS and become a professional now.</p>
+      <button class="register-button">Register Now</button>
+    </div>
+    <div class="right-section">
+      <h2>Welcome Back</h2>
+
+      <form class="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <button class="sign-in-button">Sign In</button>
+        <div class="or-separator">
+          <span>or</span>
+        </div>
+        <button class="google-button">Sign In with Google</button>
+      </form>
+    </div>
+  </div>
 </div>
