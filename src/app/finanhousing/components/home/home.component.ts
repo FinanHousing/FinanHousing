@@ -9,7 +9,7 @@ import {UserService} from "../../services/user.service";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit,AfterViewInit {
+export class HomeComponent {
 
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'username', 'email', 'phone'];
