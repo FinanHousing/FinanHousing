@@ -20,6 +20,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { PaymentCalculatorComponent } from './finanhousing/components/payment-calculator/payment-calculator.component';
 import { PaidPlanComponent } from './finanhousing/components/paid-plan/paid-plan.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { PaidPlanComponent } from './finanhousing/components/paid-plan/paid-plan
     LoginUserComponent,
     RegisterUserComponent,
     PaymentCalculatorComponent,
-    PaidPlanComponent
+    PaidPlanComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +42,7 @@ import { PaidPlanComponent } from './finanhousing/components/paid-plan/paid-plan
     MatPaginatorModule,
     MatSortModule,
     MatToolbarModule,
+    MatIconModule,
     FormsModule,
     MatFormFieldModule,
     HttpClientModule,

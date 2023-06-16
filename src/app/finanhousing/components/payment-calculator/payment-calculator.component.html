@@ -1,3 +1,4 @@
+<app-toolbar></app-toolbar>
 <div class="register-container">
   <h2>Register Data</h2>
   <form class="register-form" (submit)="onSubmit()" #calculatorForm="ngForm">
@@ -7,7 +8,7 @@
     </mat-form-field>
     <p>Tiempo en el que quiere trabajarlo ("Dias","Meses","Años"):</p>
     <mat-form-field class="form-group">
-      <input matInput placeholder="Time Format" name="timeformat" required [(ngModel)]="loanData.timeformat">
+      <input matInput placeholder="Time Format" name="timeformat" required [(ngModel)]="loanData.timeFormat">
     </mat-form-field>
     <p>Cantidad de tiempo en los plazos preestablecidos:</p>
     <mat-form-field class="form-group">

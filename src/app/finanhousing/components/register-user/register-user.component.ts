@@ -45,7 +45,7 @@ export class RegisterUserComponent implements OnInit{
   isDuplicateUser(user: User): boolean {
     return this.dataSource.data.some(
       (existingUser: User) =>
-        existingUser.username === user.username ||
+        existingUser.userName === user.userName ||
         existingUser.email === user.email
     );
   }

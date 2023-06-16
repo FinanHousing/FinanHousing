@@ -48,4 +48,8 @@ export class BaseService<T> {
       this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  getById(id: any): Observable<T> {
+    return this.http.get<T>(`${this.basePath}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

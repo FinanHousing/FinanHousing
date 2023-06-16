@@ -4,8 +4,6 @@ import {HomeComponent} from "./finanhousing/components/home/home.component";
 import {RegisterUserComponent} from "./finanhousing/components/register-user/register-user.component";
 import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not-found.component";
 import {LoginUserComponent} from "./finanhousing/components/login-user/login-user.component";
-import {PaymentCalculatorComponent} from "./finanhousing/components/payment-calculator/payment-calculator.component";
-import {PaidPlanComponent} from "./finanhousing/components/paid-plan/paid-plan.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

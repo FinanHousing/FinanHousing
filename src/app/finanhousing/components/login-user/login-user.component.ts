@@ -1,33 +1,34 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {User} from "../../models/user";
+import {Component, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
-import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-user',
   templateUrl: './login-user.component.html',
   styleUrls: ['./login-user.component.css']
 })
-export class LoginUserComponent implements OnInit {
-  userData: User;
+export class LoginUserComponent {
+  email:string;
+  password:string;
 
   @ViewChild('loginForm', { static: true })
   loginForm!: NgForm;
 
   constructor(private userService: UserService, private router: Router) {
-    this.userData = {} as User;
+    this.email="j.huanca4141@gmail.com";
+    this.password="@rduino4141!";
   }
-
-  ngOnInit(): void {}
-
-  onSubmit() {
-    if (this.loginForm.form.valid) {
-      console.log('Login data:', this.userData);
-      // Aquí puedes llamar a un método de servicio para autenticar al usuario
-      // Ejemplo: this.userService.login(this.userData).subscribe(...)
-    }
+  async login() {
+    this.userService.getAll().subscribe((response: any) => {
+      response.forEach((element:any)=>{
+        if (element.email === this.email && element.password === this.password) {
+          localStorage.setItem('user', JSON.stringify(element));
+          localStorage.setItem('isAuthenticated', 'true');
+          this.navigateToHome();
+        }
+      })
+    });
   }
 
   navigateToHome() {

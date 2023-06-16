@@ -1,14 +1,18 @@
+<app-toolbar></app-toolbar>
 <div class="register-container">
   <h2>Register in Finan-Housing</h2>
   <form class="register-form" (submit)="onSubmit()" #userForm="ngForm">
     <mat-form-field class="form-group">
-      <input matInput placeholder="FirstName" name="firstname" required [(ngModel)]="userData.firstname">
+      <input matInput placeholder="FirstName" name="firstName" required [(ngModel)]="userData.firstName">
     </mat-form-field>
     <mat-form-field class="form-group">
-      <input matInput placeholder="LastName" name="lastname" required [(ngModel)]="userData.lastname">
+      <input matInput placeholder="LastName" name="lastName" required [(ngModel)]="userData.lastName">
     </mat-form-field>
     <mat-form-field class="form-group">
-      <input matInput placeholder="UserName" name="username" required [(ngModel)]="userData.username">
+      <input matInput placeholder="PhotoUrl" name="photoUrl" required [(ngModel)]="userData.photoUrl">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="UserName" name="userName" required [(ngModel)]="userData.userName">
     </mat-form-field>
     <mat-form-field class="form-group">
       <input matInput placeholder="Email" name="email" required [(ngModel)]="userData.email">

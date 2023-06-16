@@ -2,37 +2,49 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {UserService} from "../../services/user.service";
+import {LoanService} from "../../services/loan.service";
+import {User} from "../../models/user";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-
-  dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'username', 'email', 'phone'];
+export class HomeComponent implements OnInit,AfterViewInit{
+  user:User
+  isAuthenticated:boolean
+  dataTable: MatTableDataSource<any>;
+  displayedColumns: string[] = ['id', 'name'];
 
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
 
   @ViewChild(MatSort)
   sort!: MatSort;
-  constructor(private userService: UserService) {
-    this.dataSource = new MatTableDataSource<any>();
+  constructor(private loanService: LoanService) {
+    this.dataTable = new MatTableDataSource<any>();
+    this.user = JSON.parse(localStorage.getItem('user')?? '{}');
+    this.isAuthenticated = localStorage.getItem('isAuthenticated')=== 'true';
+  }
+  ngOnInit() {
+    this.getByLoans();
   }
 
-  ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.getAllFoodTrucks();
+  async getByLoans() {
+    this.loanService.getAll().subscribe((response: any) => {
+      response.forEach((element:any)=>{
+        if(element.userId===this.user.id){
+          this.dataTable.data.push(element);
+        }
+      })
+      this.dataTable.paginator = this.paginator; // Agregar el paginador a la instancia de MatTableDataSource
+      this.dataTable.sort = this.sort; // Agregar el ordenador a la instancia de MatTableDataSource
+    });
   }
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-  }
-  getAllFoodTrucks() {
-    this.userService.getAll().subscribe((response: any) => {
-      this.dataSource.data = response;
-    });
+    if (this.paginator && this.sort) {
+      this.dataTable.paginator = this.paginator;
+      this.dataTable.sort = this.sort;
+    }
   }
 }
