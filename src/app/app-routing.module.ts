@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from "./finanhousing/components/home/home.component";
-import {RegisterUserComponent} from "./finanhousing/components/register-user/register-user.component";
 import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not-found.component";
-import {LoginUserComponent} from "./finanhousing/components/login-user/login-user.component";
+import {LoginComponent} from "./finanhousing/components/login/login.component";
+import {RegisterComponent} from "./finanhousing/components/register/register.component";
+import {LayoutComponent} from "./finanhousing/layout/layout.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterUserComponent },
-  { path: 'login', component: LoginUserComponent },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'accounts/login',
+  },
+  {
+    path: 'accounts/login',
+    component: LoginComponent,
+  },
+  {
+    path: 'accounts/register',
+    component: RegisterComponent,
+  },
+
+  {
+    path: 'accounts/Home',
+    component: LayoutComponent,
+  },
+
   { path: '**', component: PageNotFoundComponent }
+
 ];
 
 @NgModule({
